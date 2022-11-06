@@ -20,7 +20,7 @@ namespace FindElementsTests
         public void NotFoundIndexesTest(List<uint> list, ulong sum, int start, int end)
         {
             FindElementsList.FindElementsForSum(list, sum, out start, out end);
-            Assert.AreEqual(sum, list.Skip(start).Take(end - start).Sum(x => x));
+            Assert.AreNotEqual(sum, list.Skip(start).Take(end - start).Sum(x => x));
         }
 
         [TestCaseSource(typeof(RandomTestSource))]
